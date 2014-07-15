@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'apress/breadcrumbs/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "apress-breadcrumbs"
+  spec.name          = 'apress-breadcrumbs'
   spec.version       = Apress::Breadcrumbs::VERSION
   spec.authors       = ['Merkushin']
   spec.email         = ['merkushin.m.s@gmail.com']
@@ -15,16 +15,14 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'activesupport'
 
-  spec.add_development_dependency "bundler"
-  spec.add_development_dependency "rake"
-
-  # automatic changelog builder
+  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'changelogger'
-
-  # a tool for uploading files to private gem repo
   spec.add_development_dependency 'multipart-post'
 end
